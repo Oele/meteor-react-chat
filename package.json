@@ -6,8 +6,10 @@
   },
   "dependencies": {
     "babel-runtime": "6.18.0",
+    "grommet": "^1.2.1",
     "meteor-node-stubs": "~0.2.0",
     "react": "^15.4.2",
+    "react-addons-pure-render-mixin": "^15.4.2",
     "react-dom": "^15.4.2"
   }
 }
