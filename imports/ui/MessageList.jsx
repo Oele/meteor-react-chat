@@ -49,8 +49,10 @@ class MessageList extends Component {
 
         const messageList = ReactDOM.findDOMNode(this.refs.messageList);
         const lastMessage = this.props.messages[this.props.messages.length-1];
-        const lastMessageId = lastMessage._id;
-        const lastMessageElement = ReactDOM.findDOMNode(this.refs[lastMessageId]);
+        let lastMessageElement;
+        if (lastMessage) {
+          lastMessageElement = ReactDOM.findDOMNode(this.refs[lastMessage._id]);
+        }
 
         if (lastMessageElement && lastMessageElement.scrollIntoView) { // non-standard, but works in Chrome & Firefox. Needed in Firefox.
           lastMessageElement.scrollIntoView();

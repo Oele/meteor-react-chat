@@ -69,6 +69,10 @@ export default class ChatPane extends Component {
         e.preventDefault();
         const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
 
+        if (text=='') {
+          return
+        }
+
         Meteor.call('messages.send', this.props.selectedUser._id, text);
 
         ReactDOM.findDOMNode(this.refs.textInput).value = '';
